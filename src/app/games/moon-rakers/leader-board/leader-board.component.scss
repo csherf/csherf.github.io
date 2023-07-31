@@ -1,0 +1,13 @@
+.leader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.prestiege {
+    flex-grow: 1;
+    border: 1px solid #000;
+    text-align: center;
+    
+}

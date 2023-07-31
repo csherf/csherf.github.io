@@ -1,0 +1,13 @@
+.crewmates {
+    display: flex;
+    width: 200px;
+    height: 150px;
+    justify-content: space-between;
+
+}
+
+.crew {
+    border: 1px  solid  #000;
+    flex-grow: 1;
+    margin: 4px;
+}

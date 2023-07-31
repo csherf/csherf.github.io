@@ -1,0 +1,14 @@
+.ship-parts {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.ship-part {
+    border: 1px  solid  #000;
+    width: 60px;
+    flex-grow: 1;
+    margin: 4px;
+}

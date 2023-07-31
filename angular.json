@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "chads-website": {
+    "csherf-website": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -30,8 +30,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -65,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "chads-website:build:production"
+              "browserTarget": "csherf-website:build:production"
             },
             "development": {
-              "browserTarget": "chads-website:build:development"
+              "browserTarget": "csherf-website:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "chads-website:build"
+            "browserTarget": "csherf-website:build"
           }
         },
         "test": {

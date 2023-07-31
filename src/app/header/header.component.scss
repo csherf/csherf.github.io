@@ -1,0 +1,21 @@
+/* src/app/header/header.component.scss */
+.header {
+    background-color: #333;
+    padding: 10px 0;
+  
+    .navbar {
+      a.navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+      }
+  
+      .nav-link {
+        font-size: 18px;
+        padding: 10px 15px;
+  
+        &:hover {
+          background-color: #555;
+        }
+      }
+    }
+  }

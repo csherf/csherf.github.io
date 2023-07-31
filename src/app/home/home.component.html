@@ -1,36 +1,7 @@
+<h1>Play games</h1>
 
-<section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to Your Chad's Portfolio</h1>
-      <p>I am a passionate <span>Your Profession</span> based in <span>Your Location</span>.</p>
-      <a routerLink="/about" class="btn">Learn More</a>
-    </div>
-  </section>
-  
-  <section class="about">
-    <div class="about-content">
-      <h2>About Me</h2>
-      <p>
-        Hello! I'm Your Name, a creative and enthusiastic Your Profession based in Your Location.
-        I have a strong background in Your Skills and I love to take on exciting projects.
-      </p>
-    </div>
-  </section>
-  
-  <section class="projects">
-    <div class="project-content">
-      <h2>Projects</h2>
-      <!-- Add your project cards or gallery here -->
-    </div>
-  </section>
-  
-  <section class="contact">
-    <div class="contact-content">
-      <h2>Contact Me</h2>
-      <p>
-        Interested in working together or have any questions?
-        Feel free to reach out to me via email at <a href="mailto:your.email@example.com">your.email@example.com</a>.
-      </p>
-    </div>
-  </section>
-  
+<div *ngFor="let game of games">
+  <button class="black" type="button" routerLink="/games/{{game}}" routerLinkActive="active"> {{game}} </button>
+
+</div>
+
