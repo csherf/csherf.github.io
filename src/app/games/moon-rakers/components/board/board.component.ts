@@ -10,17 +10,33 @@ import { GameService } from '../../services/game/game.service';
 export class BoardComponent {
   private service: GameService = inject(GameService);
   private pserv: PlayerService = inject(PlayerService);
+  protected selected_player: string = "";
+  protected current_mission: number = 0;
 
+  state: "player_selected" | "board" | "missions" = 'board'
 
   constructor() { }
 
-  clicked(){
-    this.service.createGame("gID1","test1", "me")
-    this.service.pushGame()
-    this.service.getPlayerInfo("me").subscribe(
-      d => console.log(d)
-    )
+  select(player: string){
+    this.state = this.state == 'player_selected' ? 'board' : 'player_selected'
+    this.selected_player = player;
+    console.log(this.state)
+    // this.service.createGame("gID1","test1", "me")
+    // this.service.pushGame()
+    // this.service.getPlayerInfo("me").subscribe(
+    //   d => console.log(d)
+    // )
   
-    this.pserv.createPlayer();
+    // this.pserv.createPlayer();
+  }
+
+  mission_selected(id:number){
+    this.state = 'missions';
+    this.current_mission = id
+    console.log(id)
+  }
+
+  changeState(state:  "player_selected" | "board" | "missions"){
+    this.state = state;
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-mission',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./mission.component.scss']
 })
 export class MissionComponent {
+  @Input() mission: {id: number, path: string};
 
+  constructor(){
+    this.mission = {id: 0, path:"obj/"}
+  }
 }

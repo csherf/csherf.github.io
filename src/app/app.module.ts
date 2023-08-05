@@ -27,6 +27,7 @@ import { CrewmatesComponent } from './games/moon-rakers/components/crewmates/cre
 import { ShipPartComponent } from './games/moon-rakers/components/ship-parts/ship-part/ship-part.component';
 import { CoinsComponent } from './games/moon-rakers/components/shop/coins/coins.component';
 import { ObjectivesComponent } from './games/moon-rakers/components/objectives/objectives.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ObjectivesComponent } from './games/moon-rakers/components/objectives/o
     CrewmatesComponent,
     ShipPartComponent,
     CoinsComponent,
-    ObjectivesComponent
+    ObjectivesComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { ObjectivesComponent } from './games/moon-rakers/components/objectives/o
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,15 +1,28 @@
 <div class="board">
-    <div class="p1"> <button (click)="clicked()" class="b1">P1</button></div>
-    <div class="p2"> <button class="b2">P2</button></div>
-    <div class="p3"> <button class="b3">P3</button></div>
-    <div class="p4"> <button class="b4">P4</button></div>
-    <div class="p5"> <button class="b5">P5</button></div>
+    <div class="p1"> <button (click)="select('p1')" class="b1">P1</button></div>
+    <div class="p2"> <button (click)="select('p2')" class="b2">P2</button></div>
+    <div class="p3"> <button (click)="select('p3')" class="b3">P3</button></div>
+    <div class="p4"> <button (click)="select('p4')" class="b4">P4</button></div>
+    <div class="p5"> <button (click)="select('p5')" class="b5">P5</button></div>
 
-    <div class="center-board">
+    <div class="center-board"  *ngIf="state === 'board'">
         <div class="shop"> <app-shop></app-shop></div>
         <div class="prestige"> <app-leader-board></app-leader-board></div>
-        <div class="missions"> <app-missions></app-missions></div>
+        <div class="missions"> <app-missions (mission_clicked)="mission_selected($event)"></app-missions></div>
     </div>
 
+    <div class="players-ship" *ngIf="state === 'player_selected'">
+       <app-player [player]="selected_player"></app-player>
+
+    </div>
+
+    <div class="players-board" *ngIf="state === 'missions'">
+        <button class="back" (click)="changeState('board')">Back To Board</button>
+
+        <img src="../../../../../assets/cards/missions/mission.png" class="card" alt="mission card" width="300" height="400">
+
+
+
+    </div>
 
 </div>

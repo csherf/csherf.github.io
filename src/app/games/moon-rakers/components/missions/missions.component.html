@@ -1,12 +1,5 @@
 <div class="missions"> 
-    <div class="mission">mission</div>
-    <div class="mission">mission</div>
-    <div class="mission">mission</div>
-    <div class="mission">mission</div>
-    <div class="mission">mission</div>
-    <div class="mission">mission</div>
-    <div class="mission">mission</div>
-    <div class="mission">mission</div>
+    <app-mission *ngFor="let mission of missions;let i = index" class="mission" (click)="mission_selected(i)" [mission]="{id:i,path:mission}"></app-mission>
 
     <app-objectives></app-objectives>
 

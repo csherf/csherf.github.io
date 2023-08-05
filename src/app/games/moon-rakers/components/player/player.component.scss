@@ -1,0 +1,95 @@
+.container {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 75%;
+    height: 65%;
+
+}
+
+.play-card {
+    background-color: #a44fb7;
+    min-width: 70px;
+    min-height: 90px;
+
+    border: 2px solid #000;
+    margin: 1px;
+    box-sizing: border-box;
+
+}
+
+
+
+.current-card {
+    flex-basis: 20%;
+}
+
+.playing-field {
+    flex-basis: 60%;
+
+}
+
+.economy {
+    flex-basis: 20%;
+    border: solid 1px #ccc;
+
+}
+
+.draw {
+    flex-basis: 20%;
+    border: solid 1px #ccc;
+
+}
+
+
+
+.discard{
+    flex-basis: 15%;
+    border: solid 1px #ccc;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    .zone-header {
+        height: 10px;
+        font-size: 15px;
+        width: 100%;
+    }
+}
+
+.play-card-d{
+    height: 50px;
+    width:  40px;
+    background-color: #a44fb7;
+    border: 2px solid #000;
+    margin: 1px;
+    font-size: 10px;
+}
+.trash {
+    flex-basis: 5%;
+    border: solid 1px #ccc;
+    box-sizing: border-box;
+
+}
+
+.example-list {
+    display: flex;
+    height: 50%;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+}
+
+.playable {
+    flex-basis: 60%;
+    overflow-y: auto;
+}

@@ -1,1 +1,35 @@
-<p>player works!</p>
+<div cdkDropListGroup class="container board-color">
+    <div class="current-card board-color" >
+        <app-card></app-card>
+    </div>
+    <div 
+        class="playing-field example-list board-color" 
+        cdkDropList 
+        [cdkDropListData]="playing" 
+        (cdkDropListDropped)="drop($event)">
+        <div class="play-card" *ngFor="let card of playing" cdkDrag>{{card}}</div>
+    </div>
+
+    <div class="economy board-color">ec</div>
+    <div class="draw board-color">
+        <button (click)="draw()">Draw a Card</button>
+    </div>
+    <div 
+        class="playable example-list board-color" 
+        cdkDropList 
+        [cdkDropListData]="hand"
+        (cdkDropListDropped)="drop($event)">
+            <div class="play-card" *ngFor="let card of hand " cdkDrag>{{card}}</div>
+    </div>
+    
+    <div 
+        class="discard board-color"
+        cdkDropList 
+        [cdkDropListData]="discard"
+        (cdkDropListDropped)="drop($event)">
+        <p class="zone-header">Discard</p>
+        <div class="play-card-d" *ngFor="let card of discard " cdkDrag>{{card}}</div>
+    </div>
+    <div class="trash board-color" >tr</div>
+
+</div>

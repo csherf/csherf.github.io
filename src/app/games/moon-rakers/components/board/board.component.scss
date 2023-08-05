@@ -5,6 +5,8 @@
     width: 100%;
     flex-shrink: 0;
     background-color: #333;
+    overflow: hidden;
+
 }
 
 .p1 {
@@ -80,17 +82,44 @@
 
 }
 
+.players-ship{
+    background-color: #999;
+    position: fixed;
+
+    top: 20%;
+    left: 10%;
+    width: 75%;
+    height: 65%;
+
+}
+
+
 .shop {
     position: relative;
     background-color: #ddd ;
 }
+
 .prestige {
     position: relative;
     background-color: #ddd ;
 
 }
+
 .missions {
     position: relative;
     background-color: #ddd ;
 
 }
+
+.players-board{
+    background-color: #999;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    top: 20%;
+    left: 10%;
+    width: 75%;
+    height: 65%;
+}
+
