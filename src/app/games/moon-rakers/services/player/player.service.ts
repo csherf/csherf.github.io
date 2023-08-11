@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Iplayer } from '../../interfaces/Iplayer';
-import { AngularFireDatabase, AngularFireObject} from '@angular/fire/compat/database';
+import { AngularFireDatabase, AngularFireObject } from '@angular/fire/compat/database';
 import { Player } from '../../classes/Player';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { STARTER_DECK } from '../../interfaces/CARDS';
@@ -10,64 +10,57 @@ import { STARTER_DECK } from '../../interfaces/CARDS';
   providedIn: 'root'
 })
 export class PlayerService {
-  players: Iplayer[] = [];
   private db: AngularFireDatabase = inject(AngularFireDatabase);
 
-  private deck: string[] = this.shuffle(STARTER_DECK);
-  private hand: string[] = [];
+  private players: Player[] = [new Player("p1")];
+  private currentPlayer: number = 0;
 
-  private bhsDeck: BehaviorSubject<string[]>;
-  private bhsHand: BehaviorSubject<string[]>;
+  private bhsPlayer: BehaviorSubject<Player>;
 
 
   constructor() {
-    this.hand = this.deck.splice(-5)
-    this.bhsDeck = new BehaviorSubject(this.deck);
-    this.bhsHand = new BehaviorSubject(this.hand);
+    this.players[0].setDefault();
+    this.bhsPlayer = new BehaviorSubject(this.players[this.currentPlayer]);
 
   }
 
-
-  createPlayer(){
+  createPlayer() {
     let user = new Player("me")
     console.log(user)
     this.db.object("me").set(user);
   }
 
-  getPlayerInfo(playerId: string){
-    
-  }
-
-  getDeck(): Observable<string[]>{
-    return this.bhsDeck;
-  }
-
-  getHand():Observable<string[]>{
-    return this.bhsHand;
-  }
-
-  draw(amount: Number){
-    this.hand.push(...this.deck.splice(-amount))
-    this.bhsDeck.next(this.deck)
-    this.bhsHand.next(this.hand)
+  setPlayer(pID: number) {
+    this.currentPlayer = pID;
+    this.bhsPlayer = new BehaviorSubject(this.players[this.currentPlayer]);
 
   }
 
-  shuffle(array: any[]) {
-    let currentIndex = array.length,  randomIndex;
-  
-    // While there remain elements to shuffle.
-    while (currentIndex != 0) {
-  
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-  
-    return array;
+  getPlayerInfo(playerId: string) {
+
   }
+
+  //GET Behavior Subjects as Observables to subscribe too 
+  getBHSplayer(): Observable<Player> {
+    return this.bhsPlayer;
+  }
+
+  draw(amount: number) {
+    this.players[this.currentPlayer].draw(amount);
+    this.bhsPlayer.next( this.players[this.currentPlayer])
+  }
+
+  //Shuffle the deck
+
+
+
+  //Update classes and DB
+  update(deck: string[], hand: string[], discard: string[], trash: string[], playing: string[]) {
+
+
+  }
+
+
+
+
 }

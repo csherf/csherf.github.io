@@ -5,31 +5,40 @@
     <div 
         class="playing-field example-list board-color" 
         cdkDropList 
-        [cdkDropListData]="playing" 
+        [cdkDropListData]="player.playing" 
         (cdkDropListDropped)="drop($event)">
-        <div class="play-card" *ngFor="let card of playing" cdkDrag>{{card}}</div>
+        <div class="play-card" *ngFor="let card of player.playing" cdkDrag>{{card}}</div>
     </div>
 
     <div class="economy board-color">ec</div>
-    <div class="draw board-color">
+    <div class="draw board-color"
+        cdkDropList 
+        [cdkDropListData]="player.deck" 
+        (cdkDropListDropped)="drop($event)">
         <button (click)="draw()">Draw a Card</button>
     </div>
     <div 
         class="playable example-list board-color" 
         cdkDropList 
-        [cdkDropListData]="hand"
+        [cdkDropListData]="player.hand"
         (cdkDropListDropped)="drop($event)">
-            <div class="play-card" *ngFor="let card of hand " cdkDrag>{{card}}</div>
+            <div class="play-card" *ngFor="let card of player.hand " cdkDrag>{{card}}</div>
     </div>
     
     <div 
         class="discard board-color"
         cdkDropList 
-        [cdkDropListData]="discard"
+        [cdkDropListData]="player.discard"
         (cdkDropListDropped)="drop($event)">
         <p class="zone-header">Discard</p>
-        <div class="play-card-d" *ngFor="let card of discard " cdkDrag>{{card}}</div>
+        <div class="play-card-d" *ngFor="let card of player.discard " cdkDrag>{{card}}</div>
     </div>
-    <div class="trash board-color" >tr</div>
+
+    <div class="trash board-color"
+    cdkDropList 
+    [cdkDropListData]="player.trash"
+    (cdkDropListDropped)="drop($event)">
+    <p class="zone-header">Trash</p>
+    <div class="play-card-d" *ngFor="let card of player.trash " cdkDrag>{{card}}</div></div>
 
 </div>

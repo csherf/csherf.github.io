@@ -1,0 +1,53 @@
+.container {
+    border: 2px solid #000;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+.pcont {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+    width: 50%;
+
+    .profile {
+        box-sizing: border-box;
+        margin: 0px;
+
+    }
+
+    .create {
+        width: 100%;
+        /* Assuming you want 3 items per row in general */
+        box-sizing: border-box;
+        border: 2px solid #000;
+
+        height: 65%;
+
+    }
+
+    
+
+}
+
+.lobby {
+
+    border: 2px solid #000;
+    margin: 0;
+    text-align: center;
+    width: 50%;
+
+    .open-rooms {
+        border: 2px solid #000;
+        width: 100%;
+        height: 90%;
+    }
+}

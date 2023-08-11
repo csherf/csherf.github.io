@@ -45,7 +45,7 @@
 
 
 .discard{
-    flex-basis: 15%;
+    flex-basis: 10%;
     border: solid 1px #ccc;
     box-sizing: border-box;
     display: flex;
@@ -54,11 +54,6 @@
     box-sizing: border-box;
     overflow-y: auto;
 
-    .zone-header {
-        height: 10px;
-        font-size: 15px;
-        width: 100%;
-    }
 }
 
 .play-card-d{
@@ -69,11 +64,23 @@
     margin: 1px;
     font-size: 10px;
 }
+
 .trash {
-    flex-basis: 5%;
+    flex-basis: 10%;
     border: solid 1px #ccc;
     box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    box-sizing: border-box;
+    overflow-y: auto;
 
+}
+
+.zone-header {
+    height: 10px;
+    font-size: 15px;
+    width: 100%;
 }
 
 .example-list {

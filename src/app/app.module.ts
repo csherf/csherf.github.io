@@ -28,6 +28,9 @@ import { ShipPartComponent } from './games/moon-rakers/components/ship-parts/shi
 import { CoinsComponent } from './games/moon-rakers/components/shop/coins/coins.component';
 import { ObjectivesComponent } from './games/moon-rakers/components/objectives/objectives.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { LobbyComponent } from './games/moon-rakers/components/lobby/lobby.component';
+import { FormsModule } from '@angular/forms';
+import { LobbiesComponent } from './games/moon-rakers/components/lobby/lobbies/lobbies.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ShipPartComponent,
     CoinsComponent,
     ObjectivesComponent,
+    LobbyComponent,
+    LobbiesComponent,
     
   ],
   imports: [
@@ -58,7 +63,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    DragDropModule
+    DragDropModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,9 @@
 <div class="board">
-    <div class="p1"> <button (click)="select('p1')" class="b1">P1</button></div>
-    <div class="p2"> <button (click)="select('p2')" class="b2">P2</button></div>
-    <div class="p3"> <button (click)="select('p3')" class="b3">P3</button></div>
-    <div class="p4"> <button (click)="select('p4')" class="b4">P4</button></div>
-    <div class="p5"> <button (click)="select('p5')" class="b5">P5</button></div>
+    <div class="p1"> <button (click)="select(0)" class="b1">P1</button></div>
+    <div class="p2"> <button (click)="select(1)" class="b2">P2</button></div>
+    <div class="p3"> <button (click)="select(2)" class="b3">P3</button></div>
+    <div class="p4"> <button (click)="select(3)" class="b4">P4</button></div>
+    <div class="p5"> <button (click)="select(4)" class="b5">P5</button></div>
 
     <div class="center-board"  *ngIf="state === 'board'">
         <div class="shop"> <app-shop></app-shop></div>
@@ -12,7 +12,7 @@
     </div>
 
     <div class="players-ship" *ngIf="state === 'player_selected'">
-       <app-player [player]="selected_player"></app-player>
+       <app-player></app-player>
 
     </div>
 

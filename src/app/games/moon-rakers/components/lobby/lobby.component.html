@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="pcont">
+        <div class="profile">
+            <p>Username:
+               <input [(ngModel)]="host">
+           </p>
+       </div>
+       <div *ngIf="state == 'creating'" class="create">
+          
+           <p>Lobby Name:
+               <input [(ngModel)]="currentLobby.data.name">
+               
+           </p>
+   
+   
+           <button (click)="create()">Create Lobby</button>
+   
+       </div>
+       <div *ngIf="state == 'in-lobby'" class="lobby">
+           <p>{{currentLobby.data.name}}</p>
+           <p class="p1">{{currentLobby.data.players.p1}}</p>
+           <p class="p2">{{currentLobby.data.players.p2}}</p>
+           <p class="p3">{{currentLobby.data.players.p3}}</p>
+           <p class="p4">{{currentLobby.data.players.p4}}</p>
+           <p class="p5">{{currentLobby.data.players.p5}}</p>
+           <button (click)="back()">back</button>
+   
+           <button *ngIf="isHost == true" (click)="start()">Start</button>
+           <button *ngIf="isHost != true" (click)="join()">Join</button>
+   
+       </div>
+    </div>
+
+    <div class="lobby">
+        <h3>Lobbys</h3>
+        <div class="open-rooms">
+            <app-lobbies (joinLobby)="selectG($event)" *ngFor="let lobby of lobbies; let i = index" [lobby]="lobby" ></app-lobbies>
+        </div>
+
+    </div>
+   
+
+</div>

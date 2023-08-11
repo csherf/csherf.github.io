@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 export class GameService {
   private db: AngularFireDatabase = inject(AngularFireDatabase);
   private game: Game;
-  private player_info: Iplayer[] = [];
 
 
   constructor() { 
